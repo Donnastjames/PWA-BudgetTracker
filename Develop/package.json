@@ -5,10 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build && node server.js",
-    "lite-server": "lite-server",
     "build": "webpack",
-    "prestart": "npm run webpack"
+    "start": "webpack --watch",
+    "lite-server": "lite-server"
   },
   "author": "Donna Crawford",
   "license": "ISC",
@@ -23,6 +22,8 @@
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.8",
     "babel-loader": "^8.2.2",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2",
     "webpack-pwa-manifest": "^4.3.0"
   }
 }

@@ -3,7 +3,7 @@ const path = require("path");
 
 const config = {
   mode: "development",
-  entry: "./public/assets/js/app.js",
+  entry: "./public/assets/js/index.js",
   output: {
     path: __dirname + "/public/dist",
     filename: "bundle.js"
@@ -17,14 +17,19 @@ const config = {
       theme_color: "#ffffff",
       "theme-color": "#ffffff",
       start_url: "/",
+      display: "standalone",
+      scope: "/",
+      fingerprints: false,
+      inject: false,
+      filename: "manifest.json",
       icons: [
         {
-          src: path.resolve("public/assets/images/icons/icon-192x192.png"),
+          src: path.resolve("public/assets/icons/icon-192x192.png"),
           sizes: [96, 128, 192, 256, 384, 512],
-          destination: path.join("assets", "icons")
-        }
-      ]
-    })
+          destination: path.join("assets", "icons"),
+        },
+      ],
+    }),
   ],
   // add configuration to use babel-loader here
   module: {
@@ -35,10 +40,10 @@ const config = {
         loader: "babel-loader",
         options: {
           presets: ["@babel/preset-env"]
-        }
-      }
-    }]
-  }
+        },
+      },
+    }],
+  },
   
 };
 module.exports = config;
