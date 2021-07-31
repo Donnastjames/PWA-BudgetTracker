@@ -18,10 +18,10 @@ const config = {
       "theme-color": "#ffffff",
       start_url: "/",
       display: "standalone",
-      scope: "/",
       fingerprints: false,
       inject: false,
       filename: "manifest.json",
+      publicPath: "/dist",
       icons: [
         {
           src: path.resolve("public/assets/icons/icon-192x192.png"),

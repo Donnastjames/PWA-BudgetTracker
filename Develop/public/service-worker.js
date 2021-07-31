@@ -2,16 +2,10 @@ const FILES_TO_CACHE = [
   "/",
   "/index.html",
   "/assets/css/styles.css",
-  "/dist/bundle.js",
-  "/assets/icons/icon_512x512.png",
-  "/assets/icons/icon_384x384.png",
-  "/assets/icons/icon_256x256.png",
-  "/assets/icons/icon_192x192.png",
-  "/assets/icons/icon_128x128.png",
-  "/assets/icons/icon_96x96.png"
+  "/dist/bundle.js"
 ];
 
-const STATIC_CACHE = "static-cache-v2";
+const STATIC_CACHE = "static-cache-v1";
 const RUNTIME_CACHE = "runtime-cache";
 
 self.addEventListener("install", event => {
@@ -57,7 +51,7 @@ self.addEventListener("fetch", event => {
   }
 
   // handle runtime GET requests for data from /api routes
-  if (event.request.url.includes("/api/transaction")) {
+  if (event.request.url.includes("/api")) {
     // make network request and fallback to cache if network request fails (offline)
     event.respondWith(
       caches.open(RUNTIME_CACHE).then(cache => {
