@@ -4,7 +4,8 @@
   "description": "Budget Tracker application",
   "scripts": {
     "postinstall": "npm install --prefix ./Develop",
+    "build": "npm build --prefix ./Develop",
     "start": "npm start --prefix ./Develop",
-    "build": "npm build --prefix ./Develop"
+    "lite-server": "lite-server --prefix ./Develop"
   }
 }
