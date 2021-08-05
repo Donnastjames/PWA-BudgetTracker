@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "npm install --prefix ./Develop",
     "build": "npm build --prefix ./Develop",
-    "start": "node server.js",
+    "start": "npm start --prefix ./Develop",
     "lite-server": "lite-server --prefix ./Develop"
   }
 }
